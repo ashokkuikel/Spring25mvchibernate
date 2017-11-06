@@ -22,9 +22,11 @@ select id, foo, bar from testdata
 	<p>Request(EL) ${name}</p>
 	<c:out value="${name}"></c:out>
 	
-	<c:forEach var="row" items="${rs.rows}">
-    Foo ${row.foo}<br/>
-    Bar ${row.bar}<br/>
+	<c:forEach var="row" items="${offers}">
+    Id ${row.id}<br/>
+    Name ${row.name}<br/>
+    Email ${row.email}<br/>
+    Text ${row.text}<br/>
 </c:forEach>
 	
 	

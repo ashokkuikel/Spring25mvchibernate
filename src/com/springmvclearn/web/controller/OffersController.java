@@ -1,14 +1,21 @@
 package com.springmvclearn.web.controller;
 
-import java.util.Map;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.springmvclearn.web.dao.Offer;
+import com.springmvclearn.web.service.OffersService;
 
 @Controller
 public class OffersController {
+	
+	private OffersService OffersService;
+	
+	
 
 	// Sending value from controller to page via HttpSession session
 	// @RequestMapping("/")
@@ -26,10 +33,17 @@ public class OffersController {
 //		return modelAndView;
 //	}
 	
-	
+	@Autowired
+	public void setOffersService(OffersService offersService) {
+		OffersService = offersService;
+	}
+
+
+
 	@RequestMapping("/")
 	public String showHome(Model model) {
-		model.addAttribute("name", "<b> I am from model <b>");
+		  List<Offer> offers  = OffersService.getCurrent();
+		model.addAttribute("offers", offers);
 		return "home";
 	}
 
