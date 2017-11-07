@@ -23,6 +23,10 @@ public class OffersService {
 		return offersDao.getOffers();
 	}
 	
+	public boolean create(Offer offer){
+	return	offersDao.create(offer);
+	}
+	
 	
 
 }
