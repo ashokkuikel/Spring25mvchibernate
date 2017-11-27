@@ -19,9 +19,9 @@ public class OffersService {
 	}
 	
 	
-	public List<Offer> getCurrent(){
-		return offersDao.getOffers();
-	}
+//	public List<Offer> getCurrent(){
+//		return offersDao.getOffers();
+//	}
 	
 	public boolean create(Offer offer){
 	return	offersDao.create(offer);

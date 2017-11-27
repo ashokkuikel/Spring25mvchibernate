@@ -47,8 +47,8 @@ public class OffersController {
 	public String afterCreate(Model model, Offer offer) {
 		System.out.println(offer);
 		OffersService.create(offer);
-		List<Offer> offers = OffersService.getCurrent();
-		model.addAttribute("offers", offers);
+//		List<Offer> offers = OffersService.getCurrent();
+//		model.addAttribute("offers", offers);
 		return "offerCreateMessage";
 	}
 
