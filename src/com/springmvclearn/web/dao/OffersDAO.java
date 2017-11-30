@@ -28,6 +28,8 @@ public class OffersDAO {
 		return sessionFactory.getCurrentSession();
 	}
 
+	
+	
 	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
